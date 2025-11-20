@@ -6,6 +6,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('about');
+  const [showHistory, setShowHistory] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -141,12 +142,15 @@ const Index = () => {
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="animate-fade-in hover:shadow-lg transition-shadow">
+            <Card className="animate-fade-in hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setShowHistory(!showHistory)}>
               <CardHeader>
                 <Icon name="History" className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>История</CardTitle>
+                <CardTitle className="flex items-center justify-between">
+                  История
+                  <Icon name={showHistory ? "ChevronUp" : "ChevronDown"} className="h-5 w-5" />
+                </CardTitle>
               </CardHeader>
-              <CardContent className="max-h-[500px] overflow-y-auto">
+              {showHistory && <CardContent className="max-h-[500px] overflow-y-auto">
                 <div className="space-y-4 text-sm text-muted-foreground">
                   <p>
                     <strong>1960 год</strong> - год организации кафедры ортопедической стоматологии в Архангельском государственном медицинском институте. Основателем и первым заведующим кафедрой (1960-1965 гг.) была доцент Л.Н. Кафтасьева, которая много сил и энергии отдала организации и оснащению кафедры, подбору ассистентов, организации учебного процесса.
@@ -173,7 +177,7 @@ const Index = () => {
                     <strong>В настоящее время</strong> на кафедре работает коллектив высококвалифицированных преподавателей в составе одного доктора медицинских наук, профессора (зав. кафедрой), трех доцентов и шести ассистентов. Коллективом кафедры опубликованы две монографии, более двухсот пятидесяти научных статей, получено 2 авторских свидетельства на изобретения, внедрено более 40 рационализаторских предложений.
                   </p>
                 </div>
-              </CardContent>
+              </CardContent>}
             </Card>
 
             <Card className="animate-fade-in hover:shadow-lg transition-shadow" style={{ animationDelay: '0.1s' }}>
