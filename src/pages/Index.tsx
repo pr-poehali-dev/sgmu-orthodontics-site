@@ -207,6 +207,11 @@ const Index = () => {
               </CardHeader>
               {showClinicalBase && <CardContent>
                 <div className="text-muted-foreground space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <img src="https://cdn.poehali.dev/projects/3fd91c8d-7103-49be-9bd7-ec83a38ccc3d/files/0b8f06f4-f074-462a-b3cd-82f0ca439f04.jpg" alt="Здание клиники" className="rounded-lg w-full h-48 object-cover" />
+                    <img src="https://cdn.poehali.dev/projects/3fd91c8d-7103-49be-9bd7-ec83a38ccc3d/files/81737d47-866d-43e3-9f3d-461b5e1e40b5.jpg" alt="Интерьер клиники" className="rounded-lg w-full h-48 object-cover" />
+                    <img src="https://cdn.poehali.dev/projects/3fd91c8d-7103-49be-9bd7-ec83a38ccc3d/files/adf8ad4a-a77c-4d61-a154-93743afa4740.jpg" alt="Стоматологическое оборудование" className="rounded-lg w-full h-48 object-cover" />
+                  </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-2">Основные сведения</h4>
                     <p><strong>Полное наименование:</strong> Государственное автономное учреждение здравоохранения Архангельской области «Архангельская областная клиническая стоматологическая поликлиника»</p>
