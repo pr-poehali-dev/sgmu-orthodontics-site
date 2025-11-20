@@ -461,12 +461,13 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
-                    { title: 'Лекции по ортопедической стоматологии', link: null },
-                    { title: 'Методические рекомендации для практических занятий', link: null },
-                    { title: 'Клинические случаи и разборы', link: null },
-                    { title: 'Тестовые задания для самопроверки', link: null },
-                    { title: 'Видеоматериалы по технологиям протезирования', link: null },
-                    { title: 'Учебное видео пособие по миогимнастике', link: 'https://rutube.ru/video/private/369e9ec8a55e66e0c386cb13067726ca/?p=SMZhwg9DvIwrXD1osVE0EQ' }
+                    { title: 'Лекции по ортопедической стоматологии', link: null, type: 'file' },
+                    { title: 'Методические рекомендации для практических занятий', link: null, type: 'file' },
+                    { title: 'Клинические случаи и разборы', link: null, type: 'file' },
+                    { title: 'Тестовые задания для самопроверки', link: null, type: 'file' },
+                    { title: 'Видеоматериалы по технологиям протезирования', link: null, type: 'file' },
+                    { title: 'Учебное видео пособие по миогимнастике', link: 'https://rutube.ru/video/private/369e9ec8a55e66e0c386cb13067726ca/?p=SMZhwg9DvIwrXD1osVE0EQ', type: 'video' },
+                    { title: 'Интерактивная игра: Этиология и патогенез пародонтита', link: 'https://wayground.com/join?gc=00132666', type: 'game', qr: true }
                   ].map((item, index) => (
                     item.link ? (
                       <a 
@@ -476,8 +477,20 @@ const Index = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
                       >
-                        <Icon name="Video" className="h-5 w-5 text-primary" />
-                        <span>{item.title}</span>
+                        <Icon name={item.type === 'video' ? 'Video' : item.type === 'game' ? 'Gamepad2' : 'FileText'} className="h-5 w-5 text-primary" />
+                        <div className="flex-1">
+                          <span>{item.title}</span>
+                          {item.qr && (
+                            <div className="mt-2">
+                              <img 
+                                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(item.link)}`} 
+                                alt="QR код для быстрого доступа" 
+                                className="w-32 h-32 border rounded"
+                              />
+                              <p className="text-xs text-muted-foreground mt-1">Сканируйте для быстрого доступа</p>
+                            </div>
+                          )}
+                        </div>
                         <Icon name="ExternalLink" className="h-4 w-4 text-muted-foreground ml-auto" />
                       </a>
                     ) : (
