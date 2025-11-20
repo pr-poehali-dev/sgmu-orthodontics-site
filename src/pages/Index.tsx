@@ -504,33 +504,68 @@ const Index = () => {
               </Card>
             </TabsContent>
             <TabsContent value="practice" className="animate-fade-in">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Icon name="Briefcase" className="h-5 w-5 text-primary" />
-                    Практика
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-4 text-muted-foreground">
-                    Практические занятия проводятся в клинике кафедры с использованием современного оборудования.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="p-4 bg-primary/5 rounded-lg">
-                      <h4 className="font-medium mb-2">Клиническая практика</h4>
-                      <p className="text-sm text-muted-foreground">Работа с пациентами под контролем преподавателей</p>
-                    </div>
-                    <div className="p-4 bg-primary/5 rounded-lg">
-                      <h4 className="font-medium mb-2">Лабораторная практика</h4>
-                      <p className="text-sm text-muted-foreground">Изготовление зубных протезов в учебной лаборатории</p>
-                    </div>
-                    <div className="p-4 bg-primary/5 rounded-lg">
-                      <h4 className="font-medium mb-2">Симуляционный курс</h4>
-                      <p className="text-sm text-muted-foreground">Отработка навыков на фантомах и симуляторах</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <Tabs defaultValue="practice-info" className="w-full">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="practice-info">Практика</TabsTrigger>
+                  <TabsTrigger value="clinical-bases">Клинические базы</TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="practice-info" className="mt-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Icon name="Briefcase" className="h-5 w-5 text-primary" />
+                        Практика
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="mb-4 text-muted-foreground">
+                        Практические занятия проводятся в клинике кафедры с использованием современного оборудования.
+                      </p>
+                      <div className="space-y-3">
+                        <div className="p-4 bg-primary/5 rounded-lg">
+                          <h4 className="font-medium mb-2">Клиническая практика</h4>
+                          <p className="text-sm text-muted-foreground">Работа с пациентами под контролем преподавателей</p>
+                        </div>
+                        <div className="p-4 bg-primary/5 rounded-lg">
+                          <h4 className="font-medium mb-2">Лабораторная практика</h4>
+                          <p className="text-sm text-muted-foreground">Изготовление зубных протезов в учебной лаборатории</p>
+                        </div>
+                        <div className="p-4 bg-primary/5 rounded-lg">
+                          <h4 className="font-medium mb-2">Симуляционный курс</h4>
+                          <p className="text-sm text-muted-foreground">Отработка навыков на фантомах и симуляторах</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="clinical-bases" className="mt-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Icon name="Building2" className="h-5 w-5 text-primary" />
+                        Клинические базы кафедры ортопедической стоматологии
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <a 
+                        href="https://gamma.app/docs/bexhbow2wh1bsjk" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-4 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
+                      >
+                        <Icon name="Presentation" className="h-6 w-6 text-primary" />
+                        <div className="flex-1">
+                          <h4 className="font-medium">Презентация клинических баз</h4>
+                          <p className="text-sm text-muted-foreground">Ознакомьтесь с клиническими базами кафедры</p>
+                        </div>
+                        <Icon name="ExternalLink" className="h-5 w-5 text-muted-foreground" />
+                      </a>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </Tabs>
             </TabsContent>
           </Tabs>
         </div>
