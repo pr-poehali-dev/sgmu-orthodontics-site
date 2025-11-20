@@ -52,6 +52,13 @@ const Index = () => {
       degree: 'Молодой ученый',
       specialization: 'Ортопедическая стоматология',
       photo: 'https://cdn.poehali.dev/files/cdb2444e-5f4d-4d71-9e10-4870de6a7a42.jpg'
+    },
+    {
+      name: 'Рыжова Анна Алексеевна',
+      position: 'Ассистент',
+      degree: '',
+      specialization: 'Ортопедическая стоматология',
+      photo: 'https://cdn.poehali.dev/files/7cee704d-25d7-463c-921f-815659d42868.png'
     }
   ];
 
