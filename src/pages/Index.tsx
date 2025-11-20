@@ -8,6 +8,7 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('about');
   const [showHistory, setShowHistory] = useState(false);
   const [showAchievements, setShowAchievements] = useState(false);
+  const [showClinicalBase, setShowClinicalBase] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -196,16 +197,42 @@ const Index = () => {
               </CardContent>}
             </Card>
 
-            <Card className="animate-fade-in hover:shadow-lg transition-shadow" style={{ animationDelay: '0.2s' }}>
+            <Card className="animate-fade-in hover:shadow-lg transition-shadow cursor-pointer" style={{ animationDelay: '0.2s' }} onClick={() => setShowClinicalBase(!showClinicalBase)}>
               <CardHeader>
                 <Icon name="Stethoscope" className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Клиническая база</CardTitle>
+                <CardTitle className="flex items-center justify-between">
+                  Клиническая база
+                  <Icon name={showClinicalBase ? "ChevronUp" : "ChevronDown"} className="h-5 w-5" />
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Современная клиническая база оснащена новейшим оборудованием для подготовки студентов и оказания помощи пациентам.
-                </p>
-              </CardContent>
+              {showClinicalBase && <CardContent>
+                <div className="text-muted-foreground space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Основные сведения</h4>
+                    <p><strong>Полное наименование:</strong> Государственное автономное учреждение здравоохранения Архангельской области «Архангельская областная клиническая стоматологическая поликлиника»</p>
+                  </div>
+                  <div>
+                    <p><strong>Фактический адрес:</strong></p>
+                    <ul className="list-disc list-inside ml-2">
+                      <li>г. Архангельск, проезд Сибиряковцев, д.17</li>
+                      <li>г. Архангельск, улица Вологодская, д.17</li>
+                      <li>г. Архангельск, улица Папанина, д.9</li>
+                      <li>г. Архангельск, улица Воскресенская, д.112</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p><strong>Почтовый адрес:</strong> 163045, г. Архангельск, проезд Сибиряковцев, д.17</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">Архангельское городское стоматологическое отделение № 1</h4>
+                    <p>Фактический адрес: улица Вологодская, 17</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">Архангельское городское стоматологическое отделение № 2</h4>
+                    <p>Фактический адрес: улица Папанина, 9</p>
+                  </div>
+                </div>
+              </CardContent>}
             </Card>
           </div>
         </div>
