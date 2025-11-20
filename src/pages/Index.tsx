@@ -470,8 +470,6 @@ const Index = () => {
                       {[
                         { title: 'Оттискные материалы в ортопедической стоматологии', link: 'https://sokratic.ru/ru/orders/13HcGJTAF16Cktqqwyf1W', type: 'lecture' },
                         { title: 'Методические рекомендации по дисциплине "Пропедевтическая стоматология" для студентов 1 курса', link: 'https://www.nsmu.ru/student/faculty/department/stomat_ortop/%D0%9C%D0%A3%201%20%D0%BA%D1%83%D1%80%D1%81%201%20%D1%81%D0%B5%D0%BC.docx', type: 'document' },
-                        { title: 'Клинические случаи и разборы', link: null, type: 'file' },
-                        { title: 'Видеоматериалы по технологиям протезирования', link: null, type: 'file' },
                         { title: 'Учебное видео пособие по миогимнастике', link: 'https://rutube.ru/video/private/369e9ec8a55e66e0c386cb13067726ca/?p=SMZhwg9DvIwrXD1osVE0EQ', type: 'video' },
                         { title: 'Интерактивная игра: Этиология и патогенез пародонтита', link: 'https://wayground.com/join?gc=00132666', type: 'game', qr: true }
                       ].map((item, index) => (
