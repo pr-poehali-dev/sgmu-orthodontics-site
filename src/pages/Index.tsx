@@ -604,7 +604,7 @@ const Index = () => {
                     <p className="font-medium">Адрес</p>
                     <p className="text-sm text-muted-foreground">
                       г. Архангельск, пр. Троицкий, 51<br />
-                      Северный государственный медицинский университет
+                      Административный корпус, 5 этаж, аудитория 2534
                     </p>
                   </div>
                 </div>
@@ -612,14 +612,14 @@ const Index = () => {
                   <Icon name="Phone" className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Телефон</p>
-                    <p className="text-sm text-muted-foreground">+7 (8182) 28-57-91</p>
+                    <p className="text-sm text-muted-foreground">+7 (8182) 28-57-85</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="Mail" className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">ortho@nsmu.ru</p>
+                    <p className="text-sm text-muted-foreground">yushmanowa.tatiana@yandex.ru</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
