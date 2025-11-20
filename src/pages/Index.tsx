@@ -19,10 +19,22 @@ const Index = () => {
 
   const teachers = [
     {
-      name: 'Профессор Иванов Иван Иванович',
-      position: 'Заведующий кафедрой',
-      degree: 'Доктор медицинских наук',
-      specialization: 'Ортопедическая стоматология'
+      name: 'Поливаная Елена Альбертовна',
+      position: 'Доцент кафедры',
+      degree: 'Кандидат медицинских наук',
+      specialization: 'Ортопедическая стоматология',
+      photo: 'https://cdn.poehali.dev/files/6b9a2b67-ed80-4af9-8072-906c8409a481.jpg',
+      bio: `Поливаная Елена Альбертовна, кандидат медицинских наук, доцент кафедры с 2008 года.
+
+Окончила стоматологический факультет Архангельской государственной медицинской академии в 1995 году, в 1996 г. - специализированную клиническую интернатуру по ортопедической стоматологии (АГМА).
+
+2002 - 2006 гг. - заочный аспирант кафедры ортопедической стоматологии СГМУ. Диссертация защищена в 2007 г. на тему: «Стоматологическое здоровье студентов Архангельской области в зависимости от конституционального типа телосложения».
+
+С 2008 г. работала ассистентом, а с 2014 года - в должности доцента кафедры ортопедической стоматологии.
+
+В 2015 году награждена почетной грамотой Министерства здравоохранения Архангельской области, в 2019 году - Благодарность Администрации города Архангельска за многолетний добросовестный труд.
+
+Опубликовано более 60 печатных работ (3 из них в журналах, рекомендованных ВАК), а также 1 в Scopus и сделано 62 доклада на конференциях разного уровня, получено 1 удостоверение на рационализаторское предложение.`
     },
     {
       name: 'Доцент Петрова Елена Сергеевна',
@@ -333,15 +345,32 @@ const Index = () => {
             {teachers.map((teacher, index) => (
               <Card key={index} className="animate-fade-in hover:shadow-lg transition-all hover:scale-105" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                    <Icon name="User" className="h-10 w-10 text-primary" />
-                  </div>
+                  {teacher.photo ? (
+                    <div className="mb-4 mx-auto">
+                      <img 
+                        src={teacher.photo} 
+                        alt={teacher.name} 
+                        className="w-32 h-32 rounded-full object-cover mx-auto shadow-lg"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+                      <Icon name="User" className="h-10 w-10 text-primary" />
+                    </div>
+                  )}
                   <CardTitle className="text-center">{teacher.name}</CardTitle>
                   <CardDescription className="text-center">{teacher.position}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
                   <p className="text-sm text-muted-foreground mb-2">{teacher.degree}</p>
-                  <p className="text-sm font-medium text-primary">{teacher.specialization}</p>
+                  <p className="text-sm font-medium text-primary mb-4">{teacher.specialization}</p>
+                  {teacher.bio && (
+                    <div className="text-left text-xs text-muted-foreground mt-4 space-y-2 max-h-60 overflow-y-auto">
+                      {teacher.bio.split('\n\n').map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
