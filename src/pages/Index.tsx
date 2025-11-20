@@ -133,8 +133,8 @@ const Index = () => {
               </div>
               <div className="animate-fade-in rounded-lg overflow-hidden shadow-lg" style={{animationDelay: '0.2s'}}>
                 <img 
-                  src="https://cdn.poehali.dev/projects/3fd91c8d-7103-49be-9bd7-ec83a38ccc3d/files/148a0c5d-1c51-4ffa-b516-72d497c49ace.jpg" 
-                  alt="Клиника кафедры" 
+                  src="https://cdn.poehali.dev/files/65b0d2bc-fc46-4590-a4cd-0fd8b8229e65.jpg" 
+                  alt="Коллектив кафедры ортопедической стоматологии СГМУ" 
                   className="w-full h-full object-cover"
                 />
               </div>
