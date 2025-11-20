@@ -45,6 +45,13 @@ const Index = () => {
       degree: '',
       specialization: 'Ортопедическая стоматология',
       photo: 'https://cdn.poehali.dev/projects/3fd91c8d-7103-49be-9bd7-ec83a38ccc3d/files/4d3f6dbb-f4f7-4ee7-a188-2961c638ee17.jpg'
+    },
+    {
+      name: 'Караткевич Анна Валерьевна',
+      position: 'Ассистент',
+      degree: 'Молодой ученый',
+      specialization: 'Ортопедическая стоматология',
+      photo: 'https://cdn.poehali.dev/files/cdb2444e-5f4d-4d71-9e10-4870de6a7a42.jpg'
     }
   ];
 
