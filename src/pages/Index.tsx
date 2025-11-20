@@ -461,7 +461,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
-                    { title: 'Лекции по ортопедической стоматологии', link: null, type: 'file' },
+                    { title: 'Оттискные материалы в ортопедической стоматологии', link: 'https://sokratic.ru/ru/orders/13HcGJTAF16Cktqqwyf1W', type: 'lecture' },
                     { title: 'Методические рекомендации по дисциплине "Пропедевтическая стоматология" для студентов 1 курса', link: 'https://www.nsmu.ru/student/faculty/department/stomat_ortop/%D0%9C%D0%A3%201%20%D0%BA%D1%83%D1%80%D1%81%201%20%D1%81%D0%B5%D0%BC.docx', type: 'document' },
                     { title: 'Клинические случаи и разборы', link: null, type: 'file' },
                     { title: 'Тестовые задания для самопроверки', link: null, type: 'file' },
