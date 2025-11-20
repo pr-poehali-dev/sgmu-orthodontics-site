@@ -33,10 +33,11 @@ const Index = () => {
       photo: 'https://cdn.poehali.dev/files/6d0648e3-7c40-414c-834a-c74a0492cf0b.jpg'
     },
     {
-      name: 'Доцент Сидоров Алексей Петрович',
-      position: 'Доцент кафедры',
-      degree: 'Кандидат медицинских наук',
-      specialization: 'Имплантология'
+      name: 'Капшина Ольга Яковлевна',
+      position: 'Ассистент кафедры',
+      degree: 'Молодой ученый',
+      specialization: 'Ортопедическая стоматология',
+      photo: 'https://cdn.poehali.dev/files/dbe65671-907c-4317-8c1c-01fc8ce04231.png'
     }
   ];
 
