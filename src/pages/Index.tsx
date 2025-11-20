@@ -452,56 +452,90 @@ const Index = () => {
               </Card>
             </TabsContent>
             <TabsContent value="materials" className="animate-fade-in">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Icon name="BookOpen" className="h-5 w-5 text-primary" />
-                    Учебные материалы
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {[
-                    { title: 'Оттискные материалы в ортопедической стоматологии', link: 'https://sokratic.ru/ru/orders/13HcGJTAF16Cktqqwyf1W', type: 'lecture' },
-                    { title: 'Методические рекомендации по дисциплине "Пропедевтическая стоматология" для студентов 1 курса', link: 'https://www.nsmu.ru/student/faculty/department/stomat_ortop/%D0%9C%D0%A3%201%20%D0%BA%D1%83%D1%80%D1%81%201%20%D1%81%D0%B5%D0%BC.docx', type: 'document' },
-                    { title: 'Клинические случаи и разборы', link: null, type: 'file' },
-                    { title: 'Тестовые задания для самопроверки', link: null, type: 'file' },
-                    { title: 'Видеоматериалы по технологиям протезирования', link: null, type: 'file' },
-                    { title: 'Учебное видео пособие по миогимнастике', link: 'https://rutube.ru/video/private/369e9ec8a55e66e0c386cb13067726ca/?p=SMZhwg9DvIwrXD1osVE0EQ', type: 'video' },
-                    { title: 'Интерактивная игра: Этиология и патогенез пародонтита', link: 'https://wayground.com/join?gc=00132666', type: 'game', qr: true }
-                  ].map((item, index) => (
-                    item.link ? (
+              <Tabs defaultValue="materials-main" className="w-full">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="materials-main">Учебные материалы</TabsTrigger>
+                  <TabsTrigger value="tests">Тестовые задания</TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="materials-main" className="mt-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Icon name="BookOpen" className="h-5 w-5 text-primary" />
+                        Учебные материалы
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      {[
+                        { title: 'Оттискные материалы в ортопедической стоматологии', link: 'https://sokratic.ru/ru/orders/13HcGJTAF16Cktqqwyf1W', type: 'lecture' },
+                        { title: 'Методические рекомендации по дисциплине "Пропедевтическая стоматология" для студентов 1 курса', link: 'https://www.nsmu.ru/student/faculty/department/stomat_ortop/%D0%9C%D0%A3%201%20%D0%BA%D1%83%D1%80%D1%81%201%20%D1%81%D0%B5%D0%BC.docx', type: 'document' },
+                        { title: 'Клинические случаи и разборы', link: null, type: 'file' },
+                        { title: 'Видеоматериалы по технологиям протезирования', link: null, type: 'file' },
+                        { title: 'Учебное видео пособие по миогимнастике', link: 'https://rutube.ru/video/private/369e9ec8a55e66e0c386cb13067726ca/?p=SMZhwg9DvIwrXD1osVE0EQ', type: 'video' },
+                        { title: 'Интерактивная игра: Этиология и патогенез пародонтита', link: 'https://wayground.com/join?gc=00132666', type: 'game', qr: true }
+                      ].map((item, index) => (
+                        item.link ? (
+                          <a 
+                            key={index} 
+                            href={item.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
+                          >
+                            <Icon name={item.type === 'video' ? 'Video' : item.type === 'game' ? 'Gamepad2' : 'FileText'} className="h-5 w-5 text-primary" />
+                            <div className="flex-1">
+                              <span>{item.title}</span>
+                              {item.qr && (
+                                <div className="mt-2">
+                                  <img 
+                                    src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(item.link)}`} 
+                                    alt="QR код для быстрого доступа" 
+                                    className="w-32 h-32 border rounded"
+                                  />
+                                  <p className="text-xs text-muted-foreground mt-1">Сканируйте для быстрого доступа</p>
+                                </div>
+                              )}
+                            </div>
+                            <Icon name="ExternalLink" className="h-4 w-4 text-muted-foreground ml-auto" />
+                          </a>
+                        ) : (
+                          <div key={index} className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer">
+                            <Icon name="FileText" className="h-5 w-5 text-primary" />
+                            <span>{item.title}</span>
+                          </div>
+                        )
+                      ))}
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="tests" className="mt-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Icon name="ClipboardCheck" className="h-5 w-5 text-primary" />
+                        Тестовые задания для самопроверки
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
                       <a 
-                        key={index} 
-                        href={item.link} 
+                        href="https://app.diaclass.ru/share/10a148b010514b20943f2b0ed84cda25" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
+                        className="flex items-center gap-3 p-4 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
                       >
-                        <Icon name={item.type === 'video' ? 'Video' : item.type === 'game' ? 'Gamepad2' : 'FileText'} className="h-5 w-5 text-primary" />
+                        <Icon name="FileCheck" className="h-6 w-6 text-primary" />
                         <div className="flex-1">
-                          <span>{item.title}</span>
-                          {item.qr && (
-                            <div className="mt-2">
-                              <img 
-                                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(item.link)}`} 
-                                alt="QR код для быстрого доступа" 
-                                className="w-32 h-32 border rounded"
-                              />
-                              <p className="text-xs text-muted-foreground mt-1">Сканируйте для быстрого доступа</p>
-                            </div>
-                          )}
+                          <h4 className="font-medium">Препарирование под цельнолитую коронку</h4>
+                          <p className="text-sm text-muted-foreground">Пройдите тест для проверки знаний</p>
                         </div>
-                        <Icon name="ExternalLink" className="h-4 w-4 text-muted-foreground ml-auto" />
+                        <Icon name="ExternalLink" className="h-5 w-5 text-muted-foreground" />
                       </a>
-                    ) : (
-                      <div key={index} className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer">
-                        <Icon name="FileText" className="h-5 w-5 text-primary" />
-                        <span>{item.title}</span>
-                      </div>
-                    )
-                  ))}
-                </CardContent>
-              </Card>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </Tabs>
             </TabsContent>
             <TabsContent value="practice" className="animate-fade-in">
               <Tabs defaultValue="practice-info" className="w-full">
