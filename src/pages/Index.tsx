@@ -461,16 +461,31 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
-                    'Лекции по ортопедической стоматологии',
-                    'Методические рекомендации для практических занятий',
-                    'Клинические случаи и разборы',
-                    'Тестовые задания для самопроверки',
-                    'Видеоматериалы по технологиям протезирования'
+                    { title: 'Лекции по ортопедической стоматологии', link: null },
+                    { title: 'Методические рекомендации для практических занятий', link: null },
+                    { title: 'Клинические случаи и разборы', link: null },
+                    { title: 'Тестовые задания для самопроверки', link: null },
+                    { title: 'Видеоматериалы по технологиям протезирования', link: null },
+                    { title: 'Учебное видео пособие по миогимнастике', link: 'https://rutube.ru/video/private/369e9ec8a55e66e0c386cb13067726ca/?p=SMZhwg9DvIwrXD1osVE0EQ' }
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer">
-                      <Icon name="FileText" className="h-5 w-5 text-primary" />
-                      <span>{item}</span>
-                    </div>
+                    item.link ? (
+                      <a 
+                        key={index} 
+                        href={item.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
+                      >
+                        <Icon name="Video" className="h-5 w-5 text-primary" />
+                        <span>{item.title}</span>
+                        <Icon name="ExternalLink" className="h-4 w-4 text-muted-foreground ml-auto" />
+                      </a>
+                    ) : (
+                      <div key={index} className="flex items-center gap-3 p-3 border rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer">
+                        <Icon name="FileText" className="h-5 w-5 text-primary" />
+                        <span>{item.title}</span>
+                      </div>
+                    )
                   ))}
                 </CardContent>
               </Card>
