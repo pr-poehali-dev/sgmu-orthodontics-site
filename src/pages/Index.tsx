@@ -92,8 +92,8 @@ const Index = () => {
       <section className="relative overflow-hidden bg-gradient-to-r from-primary to-accent py-24 text-white">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://cdn.poehali.dev/projects/3fd91c8d-7103-49be-9bd7-ec83a38ccc3d/files/ef21dab6-ec2d-4099-be44-26bf766c18cd.jpg" 
-            alt="СГМУ" 
+            src="https://cdn.poehali.dev/files/33eb520e-58b2-4729-be51-fdbf03fc9297.jpg" 
+            alt="Архангельский медицинский институт" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -103,7 +103,7 @@ const Index = () => {
               Кафедра ортопедической стоматологии СГМУ
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Подготовка высококвалифицированных специалистов в области ортопедической стоматологии с 1932 года
+              Подготовка высококвалифицированных специалистов в области ортопедической стоматологии с 1960 года
             </p>
             <Button
               size="lg"
