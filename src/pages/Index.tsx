@@ -7,6 +7,7 @@ import Icon from '@/components/ui/icon';
 const Index = () => {
   const [activeSection, setActiveSection] = useState('about');
   const [showHistory, setShowHistory] = useState(false);
+  const [showAchievements, setShowAchievements] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -180,16 +181,19 @@ const Index = () => {
               </CardContent>}
             </Card>
 
-            <Card className="animate-fade-in hover:shadow-lg transition-shadow" style={{ animationDelay: '0.1s' }}>
+            <Card className="animate-fade-in hover:shadow-lg transition-shadow cursor-pointer" style={{ animationDelay: '0.1s' }} onClick={() => setShowAchievements(!showAchievements)}>
               <CardHeader>
                 <Icon name="Trophy" className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Достижения</CardTitle>
+                <CardTitle className="flex items-center justify-between">
+                  Достижения
+                  <Icon name={showAchievements ? "ChevronUp" : "ChevronDown"} className="h-5 w-5" />
+                </CardTitle>
               </CardHeader>
-              <CardContent>
+              {showAchievements && <CardContent>
                 <p className="text-muted-foreground">
-                  Преподаватели кафедры — авторы более 200 научных публикаций, 15 монографий и 8 патентов на изобретения.
+                  Коллективом кафедры нынешнего состава опубликованы три монографии, более трехсот научных статей (в том числе в журналах, рекомендованных ВАК), получено 2 авторских свидетельства на изобретения, внедрено более 40 рационализаторских предложений. Сотрудники кафедры являются соавторами 9 общероссийских учебников с грифом Министерства Образования, ряда руководств, учебных и методических пособий, в том числе, с грифом УМО (более 10).
                 </p>
-              </CardContent>
+              </CardContent>}
             </Card>
 
             <Card className="animate-fade-in hover:shadow-lg transition-shadow" style={{ animationDelay: '0.2s' }}>
