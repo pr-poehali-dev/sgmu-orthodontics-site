@@ -38,6 +38,13 @@ const Index = () => {
       degree: 'Молодой ученый',
       specialization: 'Ортопедическая стоматология',
       photo: 'https://cdn.poehali.dev/files/dbe65671-907c-4317-8c1c-01fc8ce04231.png'
+    },
+    {
+      name: 'Тихонов Владимир Николаевич',
+      position: 'Ассистент',
+      degree: '',
+      specialization: 'Ортопедическая стоматология',
+      photo: 'https://cdn.poehali.dev/projects/3fd91c8d-7103-49be-9bd7-ec83a38ccc3d/files/4d3f6dbb-f4f7-4ee7-a188-2961c638ee17.jpg'
     }
   ];
 
