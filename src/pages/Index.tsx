@@ -26,10 +26,11 @@ const Index = () => {
       photo: 'https://cdn.poehali.dev/files/6b9a2b67-ed80-4af9-8072-906c8409a481.jpg'
     },
     {
-      name: 'Доцент Петрова Елена Сергеевна',
-      position: 'Профессор кафедры',
+      name: 'Катышев Анатолий Васильевич',
+      position: 'Ассистент кафедры',
       degree: 'Кандидат медицинских наук',
-      specialization: 'Протезирование'
+      specialization: 'Ортопедическая стоматология',
+      photo: 'https://cdn.poehali.dev/files/6d0648e3-7c40-414c-834a-c74a0492cf0b.jpg'
     },
     {
       name: 'Доцент Сидоров Алексей Петрович',
