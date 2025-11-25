@@ -65,9 +65,9 @@ const Index = () => {
   const publications = [
     {
       title: 'Применение искусственного интеллекта в стоматологии при диагностике и лечении стоматологических заболеваний',
-      authors: 'Иванов И.И., Петрова Е.С.',
+      authors: 'Новак М.Б.',
       year: '2024',
-      journal: 'Стоматология',
+      journal: 'Кэмп/ех кампус',
       link: 'https://kampus.ai/ecosystem/text-copilot/8493531'
     },
     {
