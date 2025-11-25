@@ -64,10 +64,11 @@ const Index = () => {
 
   const publications = [
     {
-      title: 'Современные методы протезирования в ортопедической стоматологии',
+      title: 'Применение искусственного интеллекта в стоматологии при диагностике и лечении стоматологических заболеваний',
       authors: 'Иванов И.И., Петрова Е.С.',
       year: '2024',
-      journal: 'Стоматология'
+      journal: 'Стоматология',
+      link: 'https://kampus.ai/ecosystem/text-copilot/8493531'
     },
     {
       title: 'Применение CAD/CAM технологий в клинической практике',
@@ -646,16 +647,30 @@ const Index = () => {
               {publications.map((pub, index) => (
                 <Card key={index} className="animate-fade-in hover:shadow-lg transition-shadow" style={{ animationDelay: `${index * 0.1}s` }}>
                   <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Icon name="FileText" className="h-6 w-6 text-primary" />
+                    {pub.link ? (
+                      <a href={pub.link} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                        <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="FileText" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h5 className="font-medium mb-2 group-hover:text-primary transition-colors">{pub.title}</h5>
+                          <p className="text-sm text-muted-foreground mb-1">{pub.authors}</p>
+                          <p className="text-xs text-muted-foreground">{pub.journal}, {pub.year}</p>
+                        </div>
+                        <Icon name="ExternalLink" className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </a>
+                    ) : (
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="FileText" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h5 className="font-medium mb-2">{pub.title}</h5>
+                          <p className="text-sm text-muted-foreground mb-1">{pub.authors}</p>
+                          <p className="text-xs text-muted-foreground">{pub.journal}, {pub.year}</p>
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <h5 className="font-medium mb-2">{pub.title}</h5>
-                        <p className="text-sm text-muted-foreground mb-1">{pub.authors}</p>
-                        <p className="text-xs text-muted-foreground">{pub.journal}, {pub.year}</p>
-                      </div>
-                    </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
