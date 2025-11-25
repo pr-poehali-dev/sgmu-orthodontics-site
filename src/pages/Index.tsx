@@ -10,6 +10,7 @@ const Index = () => {
   const [showHistory, setShowHistory] = useState(false);
   const [showAchievements, setShowAchievements] = useState(false);
   const [showClinicalBase, setShowClinicalBase] = useState(false);
+  const [expandedTeacher, setExpandedTeacher] = useState<number | null>(null);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -369,7 +370,12 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {teachers.map((teacher, index) => (
-              <Card key={index} className="animate-fade-in hover:shadow-lg transition-all hover:scale-105" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card 
+                key={index} 
+                className="animate-fade-in hover:shadow-lg transition-all hover:scale-105 cursor-pointer" 
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => setExpandedTeacher(expandedTeacher === index ? null : index)}
+              >
                 <CardHeader>
                   {teacher.photo ? (
                     <div className="mb-4 mx-auto">
@@ -384,13 +390,16 @@ const Index = () => {
                       <Icon name="User" className="h-10 w-10 text-primary" />
                     </div>
                   )}
-                  <CardTitle className="text-center">{teacher.name}</CardTitle>
+                  <CardTitle className="text-center flex items-center justify-center gap-2">
+                    {teacher.name}
+                    {teacher.bio && <Icon name={expandedTeacher === index ? "ChevronUp" : "ChevronDown"} className="h-5 w-5" />}
+                  </CardTitle>
                   <CardDescription className="text-center">{teacher.position}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
                   <p className="text-sm text-muted-foreground mb-2">{teacher.degree}</p>
                   <p className="text-sm font-medium text-primary mb-4">{teacher.specialization}</p>
-                  {teacher.bio && (
+                  {teacher.bio && expandedTeacher === index && (
                     <div className="text-left text-xs text-muted-foreground mt-4 space-y-2 max-h-60 overflow-y-auto">
                       {teacher.bio.split('\n\n').map((paragraph, idx) => (
                         <p key={idx}>{paragraph}</p>
