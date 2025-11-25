@@ -115,6 +115,7 @@ const Index = () => {
               { id: 'teachers', label: 'Преподаватели', icon: 'Users' },
               { id: 'students', label: 'Студентам', icon: 'BookOpen' },
               { id: 'science', label: 'Наука', icon: 'FlaskConical' },
+              { id: 'links', label: 'Полезные ссылки', icon: 'Link' },
               { id: 'contacts', label: 'Контакты', icon: 'Mail' }
             ].map((item) => (
               <button
@@ -697,6 +698,133 @@ const Index = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="links" className="py-20 bg-secondary/30">
+        <div className="container">
+          <div className="mb-12 text-center animate-fade-in">
+            <h3 className="text-4xl font-bold mb-4">Полезные ссылки</h3>
+            <p className="text-muted-foreground text-lg">
+              Образовательные ресурсы и информационные порталы
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <Card className="animate-fade-in hover:shadow-lg transition-all hover:scale-105">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Icon name="BookOpen" className="h-5 w-5 text-primary" />
+                  Сайт кафедры СГМУ
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Официальный сайт кафедры ортопедической стоматологии СГМУ
+                </p>
+                <a 
+                  href="https://www.nsmu.ru/student/faculty/department/stomat_ortop/index.php" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:underline"
+                >
+                  Перейти на сайт
+                  <Icon name="ExternalLink" className="h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in hover:shadow-lg transition-all hover:scale-105" style={{ animationDelay: '0.1s' }}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Icon name="GraduationCap" className="h-5 w-5 text-primary" />
+                  Образовательный портал
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Электронная образовательная среда СГМУ
+                </p>
+                <a 
+                  href="https://edu.nsmu.ru/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:underline"
+                >
+                  Перейти на портал
+                  <Icon name="ExternalLink" className="h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in hover:shadow-lg transition-all hover:scale-105" style={{ animationDelay: '0.2s' }}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Icon name="Cpu" className="h-5 w-5 text-primary" />
+                  CAD/CAM технологии
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Обучение цифровым технологиям в зуботехнике
+                </p>
+                <a 
+                  href="https://dentedu.ru/zubotehnika-cad-cam" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:underline"
+                >
+                  Узнать больше
+                  <Icon name="ExternalLink" className="h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in hover:shadow-lg transition-all hover:scale-105" style={{ animationDelay: '0.3s' }}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Icon name="Microscope" className="h-5 w-5 text-primary" />
+                  Ортодонтия СГМУ
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Информационный портал по ортодонтии
+                </p>
+                <a 
+                  href="https://sgmu-orthodontics-site--preview.poehali.dev/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:underline"
+                >
+                  Посетить сайт
+                  <Icon name="ExternalLink" className="h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="animate-fade-in hover:shadow-lg transition-all hover:scale-105" style={{ animationDelay: '0.4s' }}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Icon name="Calendar" className="h-5 w-5 text-primary" />
+                  Расписание СГМУ
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Актуальное расписание занятий университета
+                </p>
+                <a 
+                  href="https://ruz.nsmu.ru/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:underline"
+                >
+                  Смотреть расписание
+                  <Icon name="ExternalLink" className="h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
