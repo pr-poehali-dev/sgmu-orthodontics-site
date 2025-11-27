@@ -636,7 +636,7 @@ const Index = () => {
                   <p className="text-muted-foreground">
                     Удобная система записи на отработку через Telegram-бот
                   </p>
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center gap-6">
                     <a 
                       href="https://t.me/timepongbot/book?startapp=5335911860" 
                       target="_blank" 
@@ -646,9 +646,16 @@ const Index = () => {
                       <Icon name="Send" className="h-6 w-6" />
                       Записаться на отработку
                     </a>
-                    <p className="text-sm text-muted-foreground">
-                      Откроется в Telegram для быстрой записи
-                    </p>
+                    <div className="flex flex-col items-center gap-3 p-6 bg-secondary/30 rounded-lg">
+                      <img 
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/timepongbot/book?startapp=5335911860" 
+                        alt="QR код для записи на отработку" 
+                        className="w-48 h-48 border-4 border-white rounded-lg shadow-md"
+                      />
+                      <p className="text-sm text-muted-foreground text-center">
+                        Отсканируйте QR-код для быстрого доступа<br />к системе записи
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
