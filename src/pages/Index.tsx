@@ -437,10 +437,11 @@ const Index = () => {
             </div>
           </div>
           <Tabs defaultValue="schedule" className="max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="schedule">Расписание</TabsTrigger>
               <TabsTrigger value="materials">Материалы</TabsTrigger>
               <TabsTrigger value="practice">Практика</TabsTrigger>
+              <TabsTrigger value="booking">Запись на отработку</TabsTrigger>
             </TabsList>
             <TabsContent value="schedule" className="animate-fade-in">
               <Card>
@@ -622,6 +623,35 @@ const Index = () => {
                   </Card>
                 </TabsContent>
               </Tabs>
+            </TabsContent>
+            <TabsContent value="booking" className="animate-fade-in">
+              <Card className="text-center">
+                <CardHeader>
+                  <CardTitle className="flex items-center justify-center gap-2">
+                    <Icon name="CalendarClock" className="h-5 w-5 text-primary" />
+                    Онлайн запись на отработку пропущенных занятий
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <p className="text-muted-foreground">
+                    Удобная система записи на отработку через Telegram-бот
+                  </p>
+                  <div className="flex flex-col items-center gap-4">
+                    <a 
+                      href="https://t.me/timepongbot/book?startapp=5335911860" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-lg font-medium shadow-lg hover:shadow-xl"
+                    >
+                      <Icon name="Send" className="h-6 w-6" />
+                      Записаться на отработку
+                    </a>
+                    <p className="text-sm text-muted-foreground">
+                      Откроется в Telegram для быстрой записи
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </TabsContent>
           </Tabs>
         </div>
