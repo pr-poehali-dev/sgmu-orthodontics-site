@@ -112,7 +112,7 @@ const Index = () => {
           <nav className="hidden md:flex gap-6">
             {[
               { id: 'about', label: 'О кафедре', icon: 'Info' },
-              { id: 'teachers', label: 'Преподаватели', icon: 'Users' },
+              { id: 'teachers', label: 'Преподаvatели', icon: 'Users' },
               { id: 'students', label: 'Студентам', icon: 'BookOpen' },
               { id: 'science', label: 'Наука', icon: 'FlaskConical' },
               { id: 'links', label: 'Полезные ссылки', icon: 'Link' },
@@ -129,6 +129,13 @@ const Index = () => {
                 {item.label}
               </button>
             ))}
+            <a
+              href="/report"
+              className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary text-foreground"
+            >
+              <Icon name="FileText" className="h-4 w-4" />
+              Доклад
+            </a>
           </nav>
         </div>
       </header>
